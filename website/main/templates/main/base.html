@@ -1,0 +1,140 @@
+<!-- The load static is needed in all files that use static files.-->
+{% load static %}
+
+<!--
+	This is the base page that contains all the common html content that all the pages need like the linking to the css and js scripts etc..
+	Each of the other html pages inherits this page.
+-->
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-nav-layout="vertical" data-theme-mode="light" data-header-styles="light" data-menu-styles="dark" data-toggled="close">
+
+<head>
+
+    <!-- Meta Data -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> {% block page_title%}Diagnostic Services {% endblock %} </title>
+    <meta name="Description" content="Bootstrap Responsive Admin Web Dashboard HTML5 Template">
+    <meta name="Author" content="Spruko Technologies Private Limited">
+	<meta name="keywords" content="admin,admin dashboard,admin panel,admin template,bootstrap,clean,dashboard,flat,jquery,modern,responsive,premium admin templates,responsive admin,ui,ui kit.">
+
+    <!-- Favicon -->
+    <link rel="icon" href="{% static "main/images/brand-logos/favicon.ico"%}" type="image/x-icon">
+
+    <!-- Choices JS -->
+    <script src="{% static "main/libs/choices.js/public/assets/scripts/choices.min.js"%}"></script>
+
+    <!-- Main Theme Js -->
+    <script src="{% static "main/js/main.js"%}"></script>
+
+    <!-- Bootstrap Css -->
+    <link id="style" href="{% static "main/libs/bootstrap/css/bootstrap.min.css"%}" rel="stylesheet" >
+
+    <!-- Style Css -->
+    <link href="{% static "main/css/styles.min.css"%}" rel="stylesheet" >
+
+    <!-- Icons Css -->
+    <link href="{% static "main/css/icons.css"%}" rel="stylesheet" >
+
+    <!-- Node Waves Css -->
+    <link href="{% static "main/libs/node-waves/waves.min.css"%}" rel="stylesheet" >
+
+    <!-- Simplebar Css -->
+    <link href="{% static "main/libs/simplebar/simplebar.min.css"%}" rel="stylesheet" >
+
+    <!-- Color Picker Css -->
+    <link rel="stylesheet" href="{% static "main/libs/flatpickr/flatpickr.min.css"%}">
+    <link rel="stylesheet" href="{% static "main/libs/@simonwep/pickr/themes/nano.min.css"%}">
+
+    <!-- Choices Css -->
+    <link rel="stylesheet" href="{% static "main/libs/choices.js/public/assets/styles/choices.min.css"%}">
+
+
+<link rel="stylesheet" href="{% static "main/libs/jsvectormap/css/jsvectormap.min.css"%}">
+
+<link rel="stylesheet" href="{% static "main/libs/swiper/swiper-bundle.min.css"%}">
+
+</head>
+
+<body>
+    <!-- Loader -->
+    <div class="page">
+        <div id="loader" >
+            <img src="{% static "main/images/media/loader.svg"%}" alt="">
+        </div>
+        <!-- Loader -->
+        {% include 'main/header.html' %}
+        {% include 'main/navbar.html' %}
+
+        <!-- The page_content block is a placeholder that is replaced when this is inherited by a child page.
+		The default value is also set just in case-->
+        {% block page_content%}
+            <h1> Fall back content </h1>
+        {% endblock %}
+        <!--Country Modal Popup-->
+        <!-- Footer Start -->
+        <footer class="footer mt-auto py-3 bg-white text-center">
+            <div class="container">
+                <span class="text-muted"> Copyright © <span id="year"></span> <a
+                        href="javascript:void(0);" class="text-dark fw-semibold">Ynex</a>.
+                    Designed with <span class="bi bi-heart-fill text-danger"></span> by <a href="javascript:void(0);">
+                        <span class="fw-semibold text-primary text-decoration-underline">Spruko</span>
+                    </a> All
+                    rights
+                    reserved
+                </span>
+            </div>
+        </footer>
+        <!-- Footer End -->
+    </div>
+
+    <!-- Popper JS -->
+    <script src="{% static "main/libs/@popperjs/core/umd/popper.min.js"%}"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="{% static "main/libs/bootstrap/js/bootstrap.bundle.min.js"%}"></script>
+
+    <!-- Defaultmenu JS -->
+    <script src="{% static "main/js/defaultmenu.min.js"%}"></script>
+
+    <!-- Node Waves JS-->
+    <script src="{% static "main/libs/node-waves/waves.min.js"%}"></script>
+
+    <!-- Sticky JS -->
+    <script src="{% static "main/js/sticky.js"%}"></script>
+
+    <!-- Simplebar JS -->
+    <script src="{% static "main/libs/simplebar/simplebar.min.js"%}"></script>
+    <script src="{% static "main/js/simplebar.js"%}"></script>
+
+    <!-- Color Picker JS -->
+    <script src="{% static "main/libs/@simonwep/pickr/pickr.es5.min.js"%}"></script>
+
+
+
+    <!-- JSVector Maps JS -->
+    <script src="{% static "main/libs/jsvectormap/js/jsvectormap.min.js"%}"></script>
+
+    <!-- JSVector Maps MapsJS -->
+    <script src="{% static "main/libs/jsvectormap/maps/world-merc.js"%}"></script>
+
+    <!-- Apex Charts JS -->
+    <script src="{% static "main/libs/apexcharts/apexcharts.min.js"%}"></script>
+
+    <!-- Chartjs Chart JS -->
+    <script src="{% static "main/libs/chart.js/chart.min.js"%}"></script>
+
+    <!-- CRM-Dashboard -->
+    <script src="{% static "main/js/crm-dashboard.js"%}"></script>
+
+    <!-- Custom JS -->
+    <script src="{% static "main/js/custom.js"%}"></script>
+
+
+    <!-- Custom-Switcher JS -->
+    <script src="{% static "main/js/custom-switcher.min.js"%}"></script>
+
+</body>
+
+</html>

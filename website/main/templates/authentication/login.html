@@ -33,6 +33,20 @@
 
 <body>
 
+    <div class="container">
+        {% if messages %}
+          {% for message in messages %}
+
+          <div class="alert alert-solid-danger alert-dismissible fade show">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="bi bi-x"></i></button>
+            </div>
+          {% endfor %}
+        {% endif %}
+
+        {% block content %}
+        {% endblock %}
+      </div>
 
     <div class="container">
         <div class="row justify-content-center align-items-center authentication authentication-basic h-100">
@@ -55,7 +69,7 @@
                                     <input type="text" class="form-control form-control-lg" name="username" id="signin-username" placeholder="user name">
                                 </div>
                                 <div class="col-xl-12 mb-2">
-                                    <label for="signin-password" class="form-label text-default d-block">Password<a href="reset-password-basic.html" class="float-end text-danger">Forget password ?</a></label>
+                                    <label for="signin-password" class="form-label text-default d-block">Password<a href="reset-password-basic.html" class="float-end text-danger">Forgot password ?</a></label>
                                     <div class="input-group">
                                         <input type="password" class="form-control form-control-lg" name="password" id="signin-password" placeholder="password">
                                         <button class="btn btn-light" type="button" onclick="createpassword('signin-password',this)" id="button-addon2"><i class="ri-eye-off-line align-middle"></i></button>

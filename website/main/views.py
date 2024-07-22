@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout
+from django.contrib import messages
 from django.shortcuts import render, redirect, HttpResponse
 
 # Create your views here.
@@ -21,11 +22,13 @@ def login_user(request):
             return redirect('home')
         else:
             print("entered user is none")
+            messages.success(request, ("There Was An Error Logging In, Try Again..."))
             return redirect('signin')
 
     else:
         return render(request,'authentication/login.html')
 
-def logoutUser(request):
+def logout_user(request):
+    print("logout_user")
     logout(request)
-    return render(request,'authentication/login.html')
+    return redirect('home')
