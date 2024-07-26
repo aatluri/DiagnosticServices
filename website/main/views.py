@@ -9,6 +9,9 @@ from django.shortcuts import render, redirect, HttpResponse
 def home(request):
     return render(request, 'main/index.html')
 
+def home2(request):
+    return render(request, 'main/home2.html')
+
 
 def login_user(request):
     print("entered login_user")

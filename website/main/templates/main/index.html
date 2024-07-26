@@ -11,7 +11,6 @@
 <!-- This replaces the placeholder for page_title in the base.html file-->
 {% block page_title%}Diagnostic Services {% endblock %}
 
-<body>
         <!-- This replaces the placeholder for page_content in the base.html file-->
 		{% block page_content%}
         <!-- Start::app-content -->
@@ -187,25 +186,62 @@
                                             <div class="card-body">
                                                 <div class="d-flex align-items-top justify-content-between">
                                                     <div>
-                                                        <span class="avatar avatar-md avatar-rounded bg-primary">
-                                                            <i class="ti ti-users fs-16"></i>
+                                                        <span class="avatar avatar-md avatar-rounded ">
+                                                            <img src="{% static "main/images/misc/hearthealth.png" %}" alt="testimage">
+                                                            <!--<i class="ti ti-users fs-16"></i>-->
                                                         </span>
                                                     </div>
                                                     <div class="flex-fill ms-3">
                                                         <div class="d-flex align-items-center justify-content-between flex-wrap">
                                                             <div>
-                                                                <p class="text-muted mb-0">Total Customers</p>
-                                                                <h4 class="fw-semibold mt-1">1,02,890</h4>
+                                                                <h4 class="fw-semibold mt-1">Heart</h4>
+
+                                                                <p class="text-muted mb-0"></p>
+
                                                             </div>
                                                             <div id="crm-total-customers"></div>
                                                         </div>
                                                         <div class="d-flex align-items-center justify-content-between mt-1">
                                                             <div>
-                                                                <a class="text-primary" href="javascript:void(0);">View All<i class="ti ti-arrow-narrow-right ms-2 fw-semibold d-inline-block"></i></a>
+                                                                <a class="text-primary" href="javascript:void(0);">Details<i class="ti ti-arrow-narrow-right ms-2 fw-semibold d-inline-block"></i></a>
                                                             </div>
                                                             <div class="text-end">
-                                                                <p class="mb-0 text-success fw-semibold">+40%</p>
-                                                                <span class="text-muted op-7 fs-11">this month</span>
+                                                                <h4 class="mb-0 text-success fw-semibold">80</h4>
+                                                                <span class="text-muted op-7 fs-11">Score</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-6 col-lg-6 col-md-6">
+                                        <div class="card custom-card overflow-hidden">
+                                            <div class="card-body">
+                                                <div class="d-flex align-items-top justify-content-between">
+                                                    <div>
+                                                        <span class="avatar avatar-md avatar-rounded ">
+                                                            <img src="{% static "main/images/misc/liver.png" %}" alt="testimage">
+                                                            <!--<i class="ti ti-users fs-16"></i>-->
+                                                        </span>
+                                                    </div>
+                                                    <div class="flex-fill ms-3">
+                                                        <div class="d-flex align-items-center justify-content-between flex-wrap">
+                                                            <div>
+                                                                <h4 class="fw-semibold mt-1">Liver</h4>
+
+                                                                <p class="text-muted mb-0"></p>
+
+                                                            </div>
+                                                            <div id="crm-total-revenue"></div>
+                                                        </div>
+                                                        <div class="d-flex align-items-center justify-content-between mt-1">
+                                                            <div>
+                                                                <a class="text-primary" href="javascript:void(0);">Details<i class="ti ti-arrow-narrow-right ms-2 fw-semibold d-inline-block"></i></a>
+                                                            </div>
+                                                            <div class="text-end">
+                                                                <h4 class="mb-0 text-warning fw-semibold">50</h4>
+                                                                <span class="text-muted op-7 fs-11">Score</span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -795,86 +831,4 @@
         </div>
         <!-- End::app-content -->
 
-
-        <!--Search Modal Popup-->
-        <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModal" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-body">
-                  <div class="input-group">
-                    <a href="javascript:void(0);" class="input-group-text" id="Search-Grid"><i class="fe fe-search header-link-icon fs-18"></i></a>
-                    <input type="search" class="form-control border-0 px-2" placeholder="Search" aria-label="Username">
-                    <a href="javascript:void(0);" class="input-group-text" id="voice-search"><i class="fe fe-mic header-link-icon"></i></a>
-                    <a href="javascript:void(0);" class="btn btn-light btn-icon" data-bs-toggle="dropdown" aria-expanded="false">
-                      <i class="fe fe-more-vertical"></i>
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="javascript:void(0);">Action</a></li>
-                      <li><a class="dropdown-item" href="javascript:void(0);">Another action</a></li>
-                      <li><a class="dropdown-item" href="javascript:void(0);">Something else here</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="javascript:void(0);">Separated link</a></li>
-                    </ul>
-                  </div>
-                  <div class="mt-4">
-                    <p class="font-weight-semibold text-muted mb-2">Are You Looking For...</p>
-                    <span class="search-tags alert"><i class="fe fe-user me-2"></i>People<a href="javascript:void(0)" class="tag-addon" data-bs-dismiss="alert"><i class="fe fe-x"></i></a></span>
-                    <span class="search-tags alert"><i class="fe fe-file-text me-2"></i>Pages<a href="javascript:void(0)" class="tag-addon" data-bs-dismiss="alert"><i class="fe fe-x"></i></a></span>
-                    <span class="search-tags alert"><i class="fe fe-align-left me-2"></i>Articles<a href="javascript:void(0)" class="tag-addon" data-bs-dismiss="alert"><i class="fe fe-x"></i></a></span>
-                    <span class="search-tags alert"><i class="fe fe-server me-2"></i>Tags<a href="javascript:void(0)" class="tag-addon" data-bs-dismiss="alert"><i class="fe fe-x"></i></a></span>
-                  </div>
-                  <div class="my-4">
-                    <p class="font-weight-semibold text-muted mb-2">Recent Search :</p>
-                    <div class="p-2 border br-5 d-flex align-items-center text-muted mb-2 alert">
-                      <a href="notifications.html"><span>Notifications</span></a>
-                      <a class="ms-auto lh-1" href="javascript:void(0);" data-bs-dismiss="alert" aria-label="Close"><i class="fe fe-x text-muted"></i></a>
-                    </div>
-                    <div class="p-2 border br-5 d-flex align-items-center text-muted mb-2 alert">
-                      <a href="alerts.html"><span>Alerts</span></a>
-                      <a class="ms-auto lh-1" href="javascript:void(0);" data-bs-dismiss="alert" aria-label="Close"><i class="fe fe-x text-muted"></i></a>
-                    </div>
-                    <div class="p-2 border br-5 d-flex align-items-center text-muted mb-0 alert">
-                      <a href="mail.html"><span>Mail</span></a>
-                      <a class="ms-auto lh-1" href="javascript:void(0);" data-bs-dismiss="alert" aria-label="Close"><i class="fe fe-x text-muted"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <div class="btn-group ms-auto">
-                    <button type="button" class="btn btn-sm btn-primary-light">Search</button>
-                    <button type="button" class="btn btn-sm btn-primary">Clear Recents</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </div>
-        <!--Search Modal Popup-->
-
-
-        <!--Country Modal Popup-->
-        <div class="modal fade" id="countryModal" tabindex="-1" aria-labelledby="countryModal" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-body p-4">
-                <label class="form-label fs-16">Select Location</label>
-                <select class="form-control choices-images"></select>
-                <label class="form-label fs-16">Select Language</label>
-                <select class="form-control" data-trigger>
-                  <option value="1">English (En)</option>
-                  <option value="2">Española (ES)</option>
-                  <option value="3">Français (FR)</option>
-                  <option value="4">Deutsch (DE)</option>
-                  <option value="5">Italiana (IT)</option>
-                  <option value="6">Русский (RU)</option>
-                  <option value="7">عربي (AR)</option>
-                  <option value="8">한국인 (KO)</option>
-                </select>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-primary-light" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-            </div>
-          </div>
-        </div>
         {% endblock %}
