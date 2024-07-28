@@ -6,11 +6,11 @@ from django.shortcuts import render, redirect, HttpResponse
 # Create your views here.
 
 
-def home(request):
+def index(request):
     return render(request, 'main/index.html')
 
-def home2(request):
-    return render(request, 'main/home2.html')
+def home(request):
+    return render(request, 'main/home.html')
 
 
 def login_user(request):

@@ -58,6 +58,27 @@ $(function (e) {
     });
     // file export datatable
 
+    // file export datatable
+    $('#file-export1').DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ],
+        language: {
+            searchPlaceholder: 'Search...',
+            sSearch: '',
+        },
+        "pageLength": 7,
+    });
+    // file export datatable
+
+    // file export datatable
+    $('#file-export2').DataTable({
+
+        "pageLength": 5,
+    });
+    // file export datatable
+
     // delete row datatable
     var table = $('#delete-datatable').DataTable({
         language: {
@@ -113,10 +134,10 @@ $(function (e) {
         // scrollX: true
     });
     // hidden columns
-    
+
     // add row datatable
     var t = $('#add-row').DataTable({
-        
+
         language: {
             searchPlaceholder: 'Search...',
             sSearch: '',

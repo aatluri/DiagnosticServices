@@ -2,13 +2,13 @@
 [Master Stylesheet]
 
 Project                            :   YNEX - HTML5 Bootstrap Admin Template
-Create Date                        :   
-Author & Copyright Ownership       :   Spruko Technologies Private Limited 
+Create Date                        :
+Author & Copyright Ownership       :   Spruko Technologies Private Limited
 Author URL                         :   https://themeforest.net/user/spruko
 Support	                           :   https://support.spruko.com/
 License Details                    :   https://spruko.com/licenses-details
 ------------------------------------------------------------------*/
-/* Table Of Content 
+/* Table Of Content
 variables
 switcher
 accordion
@@ -11812,6 +11812,9 @@ hr {
 #recent-jobs {
   max-height: 22.5rem;
 }
+#overdue-tests {
+  max-height: 22.5rem;
+}
 
 #candidates-chart .apexcharts-datalabels-group text {
   fill: var(--default-text-color) !important;
@@ -19331,6 +19334,10 @@ code[class*=language-] {
 .avatar.avatar-md svg {
   width: 1.5rem;
   height: 1.5rem;
+}
+.avatar.avatar-md img {
+  width: 0.7rem;
+  height: 0.7rem;
 }
 .avatar.avatar-lg {
   width: 3rem;
