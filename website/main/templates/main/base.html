@@ -28,6 +28,9 @@
     <!-- Main Theme Js -->
     <script src="{% static "main/js/main.js"%}"></script>
 
+    <!-- Main Theme Js -->
+    <script src="{% static "main/js/authentication-main.js"%}"></script>
+
     <!-- Bootstrap Css -->
     <link id="style" href="{% static "main/libs/bootstrap/css/bootstrap.min.css"%}" rel="stylesheet" >
 
@@ -59,6 +62,8 @@
 <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.bootstrap.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.bootstrap5.min.css">
 
+
+
 </head>
 
 <body>
@@ -68,8 +73,7 @@
             <img src="{% static "main/images/media/loader.svg"%}" alt="">
         </div>
         <!-- Loader -->
-        {% include 'main/header.html' %}
-        {% include 'main/navbar.html' %}
+
 
         <!-- The page_content block is a placeholder that is replaced when this is inherited by a child page.
 		The default value is also set just in case-->
@@ -159,6 +163,10 @@
 
     <!-- Internal Datatables JS -->
     <script src="{% static "main/js/datatables.js"%}"></script>
+
+
+    <!-- Show Password JS -->
+    <script src="{% static "main/js/show-password.js"%}"></script>
 
 </body>
 

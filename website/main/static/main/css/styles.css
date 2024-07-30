@@ -19339,6 +19339,12 @@ code[class*=language-] {
   width: 0.7rem;
   height: 0.7rem;
 }
+
+.overallhealthstatus-md img {
+  width: 1.7rem;
+  height: 1.7rem;
+}
+
 .avatar.avatar-lg {
   width: 3rem;
   height: 3rem;
