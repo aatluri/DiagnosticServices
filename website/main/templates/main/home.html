@@ -54,7 +54,7 @@
                                                         {% endif %}
                                                     </div>
                                                 </div>
-                                                <a href="javascript:void(0);" class="text-primary mb-0 fs-10 op-7 text-muted fw-semibold">DETAILS <i class="ti ti-arrow-narrow-right ms-2 fw-semibold d-inline-block"></i></a>
+                                                <a href="cardiac" class="text-primary mb-0 fs-10 op-7 text-muted fw-semibold">DETAILS <i class="ti ti-arrow-narrow-right ms-2 fw-semibold d-inline-block"></i></a>
 
                                             </div>
                                         </div>
@@ -667,25 +667,28 @@
                                     </div>
                                     <div class="card-body p-0">
                                         <ul class="list-group list-group-flush" id="recent-jobs">
-                                            <li class="list-group-item border-top-0 border-start-0 border-end-0">
-                                                <a href="javascript:void(0);">
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="me-2 lh-1">
-                                                            <span class="avatar ">
-                                                                <img src="{% static "main/images/misc/bloodtest.png" %}"  alt="testimage">
-                                                            </span>
-                                                        </div>
-                                                        <div class="flex-fill">
-                                                            <p class="mb-0 fw-semibold">Plasma Sugar Fasting</p>
+                                            {% for test in recenttests.values %}
+                                                <li class="list-group-item border-top-0 border-start-0 border-end-0">
+                                                    <a href="javascript:void(0);">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="me-2 lh-1">
+                                                                <span class="avatar  avatar-rounded">
+                                                                    <img src="{% static "main/images/misc/bloodtest.png" %}"  alt="testimage">
+                                                                </span>
+                                                            </div>
+                                                            <div class="flex-fill">
+                                                                <p class="mb-0 fw-semibold">{{test.name}}</p>
 
-                                                        </div>
-                                                        <div class="text-end">
+                                                            </div>
+                                                            <div class="text-end">
 
-                                                            <span class="badge bg-dark">May 25th, 2024</span>
+                                                                <span class="badge bg-dark">{{test.date}}</span>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </a>
-                                            </li>
+                                                    </a>
+                                                </li>
+                                            {% endfor %}
+                                            <!--
                                             <li class="list-group-item border-top-0 border-start-0 border-end-0">
                                                 <a href="javascript:void(0);">
                                                     <div class="d-flex align-items-center">
@@ -781,6 +784,7 @@
                                                     </div>
                                                 </a>
                                             </li>
+                                            -->
 
                                         </ul>
                                     </div>
@@ -1150,54 +1154,17 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>Serum Cholesterol</td>
-                                                <td>221</td>
-                                                <td>mg/dl</td>
-                                                <td> less than 200</td>
-                                                <td>May 25th, 2024</td>
-                                                <td>Abnormal</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Serum L.D.L. Cholesterol</td>
-                                                <td>154</td>
-                                                <td>mg/dl</td>
-                                                <td> less than 130</td>
-                                                <td>May 25th, 2024</td>
-                                                <td>Abnormal</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Glycosylated Haemoglobin (HbA1c)</td>
-                                                <td>221</td>
-                                                <td>mg/dl</td>
-                                                <td> Below 5.7</td>
-                                                <td>May 25th, 2024</td>
-                                                <td>Abnormal</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Serum Cholesterol</td>
-                                                <td>221</td>
-                                                <td>mg/dl</td>
-                                                <td> less than 200</td>
-                                                <td>May 25th, 2024</td>
-                                                <td>Abnormal</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Serum Cholesterol</td>
-                                                <td>221</td>
-                                                <td>mg/dl</td>
-                                                <td> less than 200</td>
-                                                <td>May 25th, 2024</td>
-                                                <td>Abnormal</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Serum Cholesterol</td>
-                                                <td>221</td>
-                                                <td>mg/dl</td>
-                                                <td> less than 200</td>
-                                                <td>May 25th, 2024</td>
-                                                <td>Abnormal</td>
-                                            </tr>
+                                            {% for test in abnormaltests.values %}
+                                                <tr>
+                                                    <td>{{test.name}}</td>
+                                                    <td>{{test.result}}</td>
+                                                    <td>{{test.unit}}</td>
+                                                    <td>{{test.refinterval}}</td>
+                                                    <td>{{test.date}}</td>
+                                                    <td>{{test.status}}</td>
+                                                </tr>
+                                            {% endfor %}
+
 
                                         </tbody>
                                     </table>
@@ -1230,54 +1197,16 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>Serum Cholesterol</td>
-                                                <td>221</td>
-                                                <td>mg/dl</td>
-                                                <td> less than 200</td>
-                                                <td>May 25th, 2024</td>
-                                                <td>Normal</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Serum L.D.L. Cholesterol</td>
-                                                <td>154</td>
-                                                <td>mg/dl</td>
-                                                <td> less than 130</td>
-                                                <td>May 25th, 2024</td>
-                                                <td>Normal</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Glycosylated Haemoglobin (HbA1c)</td>
-                                                <td>221</td>
-                                                <td>mg/dl</td>
-                                                <td> Below 5.7</td>
-                                                <td>May 25th, 2024</td>
-                                                <td>Normal</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Serum Cholesterol</td>
-                                                <td>221</td>
-                                                <td>mg/dl</td>
-                                                <td> less than 200</td>
-                                                <td>May 25th, 2024</td>
-                                                <td>Normal</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Serum Cholesterol</td>
-                                                <td>221</td>
-                                                <td>mg/dl</td>
-                                                <td> less than 200</td>
-                                                <td>May 25th, 2024</td>
-                                                <td>Normal</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Serum Cholesterol</td>
-                                                <td>221</td>
-                                                <td>mg/dl</td>
-                                                <td> less than 200</td>
-                                                <td>May 25th, 2024</td>
-                                                <td>Normal</td>
-                                            </tr>
+                                            {% for test in normaltests.values %}
+                                                <tr>
+                                                    <td>{{test.name}}</td>
+                                                    <td>{{test.result}}</td>
+                                                    <td>{{test.unit}}</td>
+                                                    <td>{{test.refinterval}}</td>
+                                                    <td>{{test.date}}</td>
+                                                    <td>{{test.status}}</td>
+                                                </tr>
+                                            {% endfor %}
                                         </tbody>
                                     </table>
                                 </div>

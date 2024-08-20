@@ -1,0 +1,258 @@
+<!--
+
+	This page inherits from the base.html page.
+	What happens here is that it takes the content of the base.html file and then replaces the placeholders with the content from here.
+	So for example the page_title in the base.html is replaced by the value between the block page_title and endblock in this file.
+	SImilarly for page_content
+-->
+{% extends "main/base.html" %}
+{% load static %}
+
+<!-- This replaces the placeholder for page_title in the base.html file-->
+{% block page_title%}Diagnostic Services {% endblock %}
+
+    <!-- This replaces the placeholder for page_content in the base.html file-->
+    {% block page_content%}
+    {% include 'main/header.html' %}
+    {% include 'main/navbar.html' %}
+        <!-- Start::app-content -->
+        <div class="main-content app-content">
+            <div class="container-fluid">
+
+                <!-- Page Header -->
+
+                <!-- Page Header Close -->
+
+
+                 <!-- Start:: row-1 -->
+                 <div class="row">
+                    <div class="col-xl-12">
+                        <div class="card custom-card">
+                            <div class="card-body">
+                                <div class="row gx-5">
+                                    <!--Hero Image Start-->
+                                    <div class="row">
+                                        <div class="col-xxl-3 col-xl-12">
+                                            <div class="row">
+                                                <div class="col-xxl-12 col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-md-5 mb-3">
+                                                    <div class=" swiper-preview-details bg-light product-details-page">
+                                                        <div class="swiper-wrapper">
+                                                            <div class="swiper-slide" id="img-container">
+                                                                <img class="img-fluid" src="{% static "main/images/misc/triglicerides.webp" %}"  alt="testimage">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--Hero Image End-->
+                                        <!--Test Detail Area Start-->
+                                        <div class="col-xxl-9 col-xl-12">
+                                            <div class="row gx-5">
+                                                <!--Test Detail Title Start-->
+                                                <div class="col-xl-12 mt-xxl-0 mt-3">
+                                                    <div>
+                                                        <p class="fs-18 fw-semibold mb-0">Serum Triglycerides</p>
+                                                        <p class="fs-18 mb-4">
+
+                                                        </p>
+                                                        <div class="row mb-4">
+                                                            <div class="col-xxl-2 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-xxl-0 mt-3">
+                                                                <p class="mb-2 fs-15 fw-semibold">Latest Result</p>
+                                                                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                                                    <input type="radio" class="btn-check" name="select-type" id="type1" checked="">
+                                                                    <p class="mb-1"><span class="h3">68</span></p>
+                                                                    <!--<label for="type1">68</label>-->
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xxl-2 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-xxl-0 mt-3">
+                                                                <p class="mb-2 fs-15 fw-semibold">Date</p>
+                                                                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                                                    <input type="radio" class="btn-check" name="select-type" id="type1" checked="">
+                                                                    <label  for="type1">May 25th, 2024</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xxl-2 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-xxl-0 mt-3">
+                                                                <p class="mb-2 fs-15 fw-semibold">Unit</p>
+                                                                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                                                    <input type="radio" class="btn-check" name="select-type" id="type1" checked="">
+                                                                    <label  for="type1">mg/dl</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xxl-2 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-xxl-0 mt-3">
+                                                                <p class="mb-2 fs-15 fw-semibold">Methodology</p>
+                                                                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                                                    <input type="radio" class="btn-check" name="select-type" id="type1" checked="">
+                                                                    <label  for="type1">Lipase GK: GPO POD</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xxl-4 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-xxl-0 mt-3">
+                                                                <p class="mb-2 fs-15 fw-semibold">Biological Ref Interval</p>
+                                                                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                                                    <input type="radio" class="btn-check" name="select-type" id="type1" checked="">
+                                                                    <label  for="type1">
+                                                                        Optimal - 30-149
+                                                                        ,Boarder-line High 150 – 199 mg/dL
+                                                                        ,High 200 - 399 mg/dL
+                                                                        ,Very High > 400 mg/dL
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mb-4">
+                                                            <p class="fs-15 fw-semibold mb-1">Description :</p>
+                                                            <p class="text-muted mb-0">
+                                                                Triglycerides are an important measure of heart health. High triglycerides may contribute to hardening of the arteries or thickening of the artery walls (arteriosclerosis) — which increases the risk of stroke, heart attack and heart disease                                                         </p>
+                                                        </div>
+                                                        <div class="mb-4">
+                                                            <div class="row">
+                                                                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                                                    <p class="fs-15 fw-semibold mb-2">Colors :</p>
+                                                                    <p class="mb-0 d-flex">
+                                                                        <a class="color-1 product-colors selected" href="javascript:void(0)">
+                                                                            <i class="ri-checkbox-blank-circle-fill"></i>
+                                                                        </a>
+                                                                        <a class="color-2 product-colors" href="javascript:void(0)">
+                                                                            <i class="ri-checkbox-blank-circle-fill"></i>
+                                                                        </a>
+                                                                        <a class="color-3 product-colors" href="javascript:void(0)">
+                                                                            <i class="ri-checkbox-blank-circle-fill"></i>
+                                                                        </a>
+                                                                        <a class="color-4 product-colors" href="javascript:void(0)">
+                                                                            <i class="ri-checkbox-blank-circle-fill"></i>
+                                                                        </a>
+                                                                        <a class="color-5 product-colors" href="javascript:void(0)">
+                                                                            <i class="ri-checkbox-blank-circle-fill"></i>
+                                                                        </a>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="col-xl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-md-0 mt-3">
+                                                                    <p class="fs-15 fw-semibold mb-2">Dial Size(in mm) :</p>
+                                                                    <p class="mb-0 d-flex">
+                                                                        <a class="color-1 product-sizes selected" href="javascript:void(0)">
+                                                                            44
+                                                                        </a>
+                                                                        <a class="color-2 product-sizes" href="javascript:void(0)">
+                                                                            40
+                                                                        </a>
+                                                                        <a class="color-3 product-sizes" href="javascript:void(0)">
+                                                                            38
+                                                                        </a>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--Test Detail Ref Interval Start
+                                                <div class="col-xl-4 mt-xxl-0 mt-3">
+                                                    <div class="mb-5">
+                                                        <div class="mb-4">
+                                                            <ul class="list-group">
+                                                                <li class="list-group-item">
+                                                                    <div class="lh-1">
+                                                                        <span class="fs-18 fw-semibold mb-0">Biological Reference Interval</span>
+                                                                    </div>
+                                                                </li>
+                                                                <li class="list-group-item">
+                                                                    <div class="fs-12 text-default">
+                                                                        <span class=" fs-15 me-1 fw-semibold">Optimal - Fasting 30-149</span>
+                                                                    </div>
+
+                                                                </li>
+                                                                <li class="list-group-item">
+                                                                    <div class="fs-12 text-default">
+                                                                        <span class=" fs-15 me-1 fw-semibold">
+                                                                            Boarder-line High: 150 – 199 mg/dL
+                                                                        </span>
+                                                                    </div>
+                                                                    <div class="fs-12 text-default">
+                                                                        <span class=" fs-15 me-1 fw-semibold">
+                                                                            High: 200 - 399 mg/dL
+                                                                        </span>
+                                                                    </div>
+                                                                    <div class="fs-12 text-default">
+                                                                        <span class=" fs-15 me-1 fw-semibold">
+                                                                            Very High: above 400 mg/dL
+                                                                        </span>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="text-center">
+                                                        <a href="javascript:void(0);">
+                                                            <img src="../assets/images/ecommerce/png/25.png" alt="" class="img-fluid rounded bg-light">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                -->
+                                            </div>
+                                        </div>
+                                        <!--Test Detail Area End-->
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xl-6">
+                                            <div class="card custom-card">
+                                                <div class="card-header">
+                                                    <div class="card-title" >
+                                                        Recent Tests<span class="avatar avatar-md" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-dark"
+                                                        data-bs-placement="bottom" title="We have considered the most recent result for each test">
+                                                        <img src="{% static "main/images/misc/info.png" %}"  alt="testimage">
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="table-responsive">
+                                                        <table id="file-export1" class="table table-bordered text-nowrap w-100">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Test Name</th>
+                                                                    <th>Result</th>
+                                                                    <th>Unit</th>
+                                                                    <th>Ref Interval</th>
+                                                                    <th>Date</th>
+                                                                    <th>Status</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                {% for test in normaltests.values %}
+                                                                    <tr>
+                                                                        <td>{{test.name}}</td>
+                                                                        <td>{{test.result}}</td>
+                                                                        <td>{{test.unit}}</td>
+                                                                        <td>{{test.refinterval}}</td>
+                                                                        <td>{{test.date}}</td>
+                                                                        <td>{{test.status}}</td>
+                                                                    </tr>
+                                                                {% endfor %}
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6">
+                                            <div class="card custom-card">
+                                                <div class="card-header">
+                                                    <div class="card-title">Historical Trend</div>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div id="line-chart"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End:: row-1 -->
+
+            </div>
+        </div>
+        <!-- End::app-content -->
+
+    {% endblock %}
+
