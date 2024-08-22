@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from django.shortcuts import render, redirect, HttpResponse
+from django.shortcuts import render, redirect, HttpResponse, HttpResponseRedirect
 from django.contrib.auth.forms import UserCreationForm
 from .forms import RegisterUserForm
 
@@ -22,15 +22,17 @@ def cardiac(request):
     })
 
 
-def test_detail(request):
-    abnormaltests=None
-    normaltests=None
-    if request.user.id is not None:
-        normaltests,abnormaltests = setcardiacpage_data()
-    return render(request, 'main/testdetail.html',{
-        "abnormaltests":abnormaltests,
-        "normaltests":normaltests
-    })
+def test_detail(request,pathparameter):
+    if pathparameter=="triglicerides":
+        testdetaildata=None
+        if request.user.id is not None:
+            testdetaildata = settestdetail_data()
+        return render(request, 'main/testdetail.html',{
+            "testdetaildata":testdetaildata
+        })
+    else:
+        return redirect(pathparameter)
+
 
 def home(request):
     print(request.user.id)
@@ -152,6 +154,7 @@ def sethomepage_data():
             "refinterval":"Below 5.7",
             "date" : "May 25th, 2024",
             "status" : "abnormal",
+            "identificationnumber":50450206,
         },
         "2" : {
             "name" : "Glycosylated Haemoglobin (HbA1c)",
@@ -160,6 +163,7 @@ def sethomepage_data():
             "refinterval":"Below 5.7",
             "date" : "May 25th, 2024",
             "status" : "abnormal",
+            "identificationnumber":50450206,
         },
         "3" : {
             "name" : "Glycosylated Haemoglobin (HbA1c)",
@@ -168,6 +172,7 @@ def sethomepage_data():
             "refinterval":"Below 5.7",
             "date" : "May 25th, 2024",
             "status" : "abnormal",
+            "identificationnumber":50450206,
         },
     }
     normaltests = {
@@ -178,6 +183,7 @@ def sethomepage_data():
             "refinterval":"Below 5.7",
             "date" : "May 25th, 2024",
             "status" : "abnormal",
+            "identificationnumber":50450206,
         },
         "2" : {
             "name" : "Glycosylated Haemoglobin (HbA1c)",
@@ -186,6 +192,7 @@ def sethomepage_data():
             "refinterval":"Below 5.7",
             "date" : "May 25th, 2024",
             "status" : "abnormal",
+            "identificationnumber":50450206,
         },
         "3" : {
             "name" : "Glycosylated Haemoglobin (HbA1c)",
@@ -194,6 +201,7 @@ def sethomepage_data():
             "refinterval":"Below 5.7",
             "date" : "May 25th, 2024",
             "status" : "abnormal",
+            "identificationnumber":50450206,
         },
     }
     return overallhealthstatus,overduetests,recenttests,abnormaltests,normaltests
@@ -207,6 +215,7 @@ def setcardiacpage_data():
             "refinterval":"Fasting 30-149",
             "date" : "May 25th, 2024",
             "status" : "Normal",
+            "identificationnumber":50450206,
             "description":"Triglycerides are an important measure of heart health. High triglycerides may contribute to hardening of the arteries or thickening of the artery walls (arteriosclerosis) — which increases the risk of stroke, heart attack and heart disease ."
         },
         "2" : {
@@ -216,6 +225,7 @@ def setcardiacpage_data():
             "refinterval":"Fasting 30-149",
             "date" : "May 25th, 2024",
             "status" : "Normal",
+            "identificationnumber":50450206,
             "description":"Triglycerides are an important measure of heart health. High triglycerides may contribute to hardening of the arteries or thickening of the artery walls (arteriosclerosis) — which increases the risk of stroke, heart attack and heart disease ."
         },
         "3" : {
@@ -225,6 +235,7 @@ def setcardiacpage_data():
             "refinterval":"Fasting 30-149",
             "date" : "May 25th, 2024",
             "status" : "Normal",
+            "identificationnumber":50450206,
             "description":"Triglycerides are an important measure of heart health. High triglycerides may contribute to hardening of the arteries or thickening of the artery walls (arteriosclerosis) — which increases the risk of stroke, heart attack and heart disease ."
         },
         "4" : {
@@ -234,6 +245,7 @@ def setcardiacpage_data():
             "refinterval":"Fasting 30-149",
             "date" : "May 25th, 2024",
             "status" : "Normal",
+            "identificationnumber":50450206,
             "description":"Triglycerides are an important measure of heart health. High triglycerides may contribute to hardening of the arteries or thickening of the artery walls (arteriosclerosis) — which increases the risk of stroke, heart attack and heart disease ."
         },
     }
@@ -245,6 +257,7 @@ def setcardiacpage_data():
             "refinterval":"Fasting 30-149",
             "date" : "May 25th, 2024",
             "status" : "Abnormal",
+            "identificationnumber":50450206,
             "description":"Triglycerides are an important measure of heart health. High triglycerides may contribute to hardening of the arteries or thickening of the artery walls (arteriosclerosis) — which increases the risk of stroke, heart attack and heart disease ."
         },
         "2" : {
@@ -254,6 +267,7 @@ def setcardiacpage_data():
             "refinterval":"Fasting 30-149",
             "date" : "May 25th, 2024",
             "status" : "Abnormal",
+            "identificationnumber":50450206,
             "description":"Triglycerides are an important measure of heart health. High triglycerides may contribute to hardening of the arteries or thickening of the artery walls (arteriosclerosis) — which increases the risk of stroke, heart attack and heart disease ."
         },
         "3" : {
@@ -263,6 +277,7 @@ def setcardiacpage_data():
             "refinterval":"Fasting 30-149",
             "date" : "May 25th, 2024",
             "status" : "Abnormal",
+            "identificationnumber":50450206,
             "description":"Triglycerides are an important measure of heart health. High triglycerides may contribute to hardening of the arteries or thickening of the artery walls (arteriosclerosis) — which increases the risk of stroke, heart attack and heart disease ."
         },
         "4" : {
@@ -272,7 +287,54 @@ def setcardiacpage_data():
             "refinterval":"Fasting 30-149",
             "date" : "May 25th, 2024",
             "status" : "Abnormal",
+            "identificationnumber":50450206,
             "description":"Triglycerides are an important measure of heart health. High triglycerides may contribute to hardening of the arteries or thickening of the artery walls (arteriosclerosis) — which increases the risk of stroke, heart attack and heart disease ."
         },
     }
    return normaltests,abnormaltests
+
+def settestdetail_data():
+   testdetaildata = {
+        "1" : {
+            "name" : "Serum Triglycerides",
+            "result":68,
+            "unit":"mg/dl",
+            "refinterval":"Fasting 30-149",
+            "date" : "May 25th, 2024",
+            "status" : "Normal",
+            "identificationnumber":50450206,
+            "description":"Triglycerides are an important measure of heart health. High triglycerides may contribute to hardening of the arteries or thickening of the artery walls (arteriosclerosis) — which increases the risk of stroke, heart attack and heart disease ."
+        },
+        "2" : {
+            "name" : "Serum Triglycerides",
+            "result":68,
+            "unit":"mg/dl",
+            "refinterval":"Fasting 30-149",
+            "date" : "May 25th, 2024",
+            "status" : "Normal",
+            "identificationnumber":50450206,
+            "description":"Triglycerides are an important measure of heart health. High triglycerides may contribute to hardening of the arteries or thickening of the artery walls (arteriosclerosis) — which increases the risk of stroke, heart attack and heart disease ."
+        },
+        "3" : {
+            "name" : "Serum Triglycerides",
+            "result":68,
+            "unit":"mg/dl",
+            "refinterval":"Fasting 30-149",
+            "date" : "May 25th, 2024",
+            "status" : "Normal",
+            "identificationnumber":50450206,
+            "description":"Triglycerides are an important measure of heart health. High triglycerides may contribute to hardening of the arteries or thickening of the artery walls (arteriosclerosis) — which increases the risk of stroke, heart attack and heart disease ."
+        },
+        "4" : {
+            "name" : "Serum Triglycerides",
+            "result":68,
+            "unit":"mg/dl",
+            "refinterval":"Fasting 30-149",
+            "date" : "May 25th, 2024",
+            "status" : "Normal",
+            "identificationnumber":50450206,
+            "description":"Triglycerides are an important measure of heart health. High triglycerides may contribute to hardening of the arteries or thickening of the artery walls (arteriosclerosis) — which increases the risk of stroke, heart attack and heart disease ."
+        },
+    }
+   return testdetaildata
+

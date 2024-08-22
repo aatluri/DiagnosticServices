@@ -11,5 +11,5 @@ urlpatterns = [
     path('signout', views.logout_user, name='signout'),
     path('register', views.register_user, name='register'),
     path('cardiac', views.cardiac, name='cardiac'),
-    path('testdetail', views.test_detail, name='testdetail'),
+    path('testdetail/<pathparameter>', views.test_detail),
 ]

@@ -213,10 +213,11 @@
                                                                     <th>Ref Interval</th>
                                                                     <th>Date</th>
                                                                     <th>Status</th>
+                                                                    <th>Identification Number</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-                                                                {% for test in normaltests.values %}
+                                                                {% for test in testdetaildata.values %}
                                                                     <tr>
                                                                         <td>{{test.name}}</td>
                                                                         <td>{{test.result}}</td>
@@ -224,6 +225,7 @@
                                                                         <td>{{test.refinterval}}</td>
                                                                         <td>{{test.date}}</td>
                                                                         <td>{{test.status}}</td>
+                                                                        <td>{{test.identificationnumber}}</td>
                                                                     </tr>
                                                                 {% endfor %}
                                                             </tbody>
