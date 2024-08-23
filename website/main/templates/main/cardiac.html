@@ -63,8 +63,7 @@
                                                                 <span class=" bg-success-transparent">{{test.status}}</span>
                                                             </div>
                                                         </div>
-                                                        <div class="fs-25 fw-bold mb-1 ">68<sub class="text-muted fw-semibold fs-11 ms-1"></sub></div>
-                                                        <div class="mb-1 text-muted">{{test.description}}</div>
+                                                        <div class="fs-25 fw-bold mb-1 ">{{test.result}}<sub class="text-muted fw-semibold fs-11 ms-1"></sub></div>
                                                         <ul class="list-unstyled mb-0">
                                                             <li class="d-flex align-items-center mb-3">
                                                                 <span class="me-2">
@@ -91,7 +90,7 @@
                                                                 </span>
                                                             </li>
                                                             <li class="d-grid">
-                                                                <button class="btn btn-light btn-wave"><a href="testdetail/triglicerides">Historical Trend</a></button>
+                                                                <button class="btn btn-light btn-wave"><a href="testdetail/{{test.detaillink}}">Historical Trend</a></button>
                                                             </li>
                                                         </ul>
                                                     </div>

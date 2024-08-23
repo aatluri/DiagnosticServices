@@ -52,7 +52,7 @@
                                                 <!--Test Detail Title Start-->
                                                 <div class="col-xl-12 mt-xxl-0 mt-3">
                                                     <div>
-                                                        <p class="fs-18 fw-semibold mb-0">Serum Triglycerides</p>
+                                                        <p class="fs-18 fw-semibold mb-0">{{testdetaildata.name}}</p>
                                                         <p class="fs-18 mb-4">
 
                                                         </p>
@@ -61,7 +61,7 @@
                                                                 <p class="mb-2 fs-15 fw-semibold">Latest Result</p>
                                                                 <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
                                                                     <input type="radio" class="btn-check" name="select-type" id="type1" checked="">
-                                                                    <p class="mb-1"><span class="h3">68</span></p>
+                                                                    <p class="mb-1"><span class="h3">{{testdetaildata.result}}</span></p>
                                                                     <!--<label for="type1">68</label>-->
                                                                 </div>
                                                             </div>
@@ -69,21 +69,21 @@
                                                                 <p class="mb-2 fs-15 fw-semibold">Date</p>
                                                                 <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
                                                                     <input type="radio" class="btn-check" name="select-type" id="type1" checked="">
-                                                                    <label  for="type1">May 25th, 2024</label>
+                                                                    <label  for="type1">{{testdetaildata.date}}</label>
                                                                 </div>
                                                             </div>
                                                             <div class="col-xxl-2 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-xxl-0 mt-3">
                                                                 <p class="mb-2 fs-15 fw-semibold">Unit</p>
                                                                 <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
                                                                     <input type="radio" class="btn-check" name="select-type" id="type1" checked="">
-                                                                    <label  for="type1">mg/dl</label>
+                                                                    <label  for="type1">{{testdetaildata.unit}}</label>
                                                                 </div>
                                                             </div>
                                                             <div class="col-xxl-2 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-xxl-0 mt-3">
                                                                 <p class="mb-2 fs-15 fw-semibold">Methodology</p>
                                                                 <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
                                                                     <input type="radio" class="btn-check" name="select-type" id="type1" checked="">
-                                                                    <label  for="type1">Lipase GK: GPO POD</label>
+                                                                    <label  for="type1">{{testdetaildata.methodology}}</label>
                                                                 </div>
                                                             </div>
                                                             <div class="col-xxl-4 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-xxl-0 mt-3">
@@ -91,10 +91,7 @@
                                                                 <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
                                                                     <input type="radio" class="btn-check" name="select-type" id="type1" checked="">
                                                                     <label  for="type1">
-                                                                        Optimal - 30-149
-                                                                        ,Boarder-line High 150 – 199 mg/dL
-                                                                        ,High 200 - 399 mg/dL
-                                                                        ,Very High > 400 mg/dL
+                                                                        {{testdetaildata.refinterval}}
                                                                     </label>
                                                                 </div>
                                                             </div>
@@ -102,7 +99,8 @@
                                                         <div class="mb-4">
                                                             <p class="fs-15 fw-semibold mb-1">Description :</p>
                                                             <p class="text-muted mb-0">
-                                                                Triglycerides are an important measure of heart health. High triglycerides may contribute to hardening of the arteries or thickening of the artery walls (arteriosclerosis) — which increases the risk of stroke, heart attack and heart disease                                                         </p>
+                                                                {{testdetaildata.description}}
+                                                            </p>
                                                         </div>
                                                         <div class="mb-4">
                                                             <div class="row">
@@ -217,7 +215,7 @@
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-                                                                {% for test in testdetaildata.values %}
+                                                                {% for test in recenttests.values %}
                                                                     <tr>
                                                                         <td>{{test.name}}</td>
                                                                         <td>{{test.result}}</td>
